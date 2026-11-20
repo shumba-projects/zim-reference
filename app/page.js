@@ -16,6 +16,12 @@ export default function Home() {
           </Link>
         </li>
         <li>
+          <Link href="/traffic">
+            <b>Traffic deposit fines</b>
+            <span>The deposit fine for about 400 traffic offences, from licences to speeding.</span>
+          </Link>
+        </li>
+        <li>
           <Link href="/pay">
             <b>Pay Check</b>
             <span>The statutory minimum wage, its effective date and who it covers.</span>

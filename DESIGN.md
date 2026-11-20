@@ -50,12 +50,43 @@ typography:
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "-0.03em"
+  h1-narrow:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.75rem"
+    fontWeight: 750
+    lineHeight: 1.15
+  tool-title:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.375rem"
+    fontWeight: 700
+    lineHeight: 1.15
+  lede:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.55
+  note:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+    lineHeight: 1.55
+  small:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.55
+  zig:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 400
+    lineHeight: 1.55
   column-head:
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 650
     letterSpacing: "0.06em"
 rounded:
+  tick: "1px"
   hair: "2px"
   sm: "3px"
 spacing:
@@ -121,7 +152,8 @@ One family, the system sans, so nothing extra loads on slow mobile data. Figures
 ### Hierarchy
 - **ident** (3rem/800): the section identifier, e.g. "s. 182", as the headline on detail pages.
 - **figure** (2.5rem/800): the amount the reader came for.
-- **h1** 2rem, **h2** 1.25rem, **body** 1rem/1.55 with a 68ch measure.
+- **h1** 2rem (1.75rem below 40rem), **tool-title** 1.375rem on the home list, **h2** 1.25rem.
+- **lede** 1.0625rem, **body** 1rem/1.55 with a 68ch measure, **note** 0.9375rem, **small** 0.875rem (captions, colophon, group heads), **zig** 0.8125rem (the ZiG line under an amount).
 - **column-head** (0.75rem, uppercase, 0.06em tracking): table column heads, `dt` labels and note titles only.
 
 ## Layout
@@ -143,6 +175,9 @@ Column heads in `column-head`, rows separated by hairlines, amounts right-aligne
 
 ### Level gauge (signature)
 Fourteen 4×14px ticks: filled ticks in ink, the top filled tick in accent, the rest in `rule`. It links an offence to its row on the scale (`#level-n`).
+
+### Instrument group head
+In long schedules (traffic), rows are grouped under the act or regulations they come from: a full-width head row in `small` ink on the ground colour, ruled below.
 
 ### Level ramp
 A log-scaled 10px bar per level, so that US$5 and US$5,000 read on one scale.

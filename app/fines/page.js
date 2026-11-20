@@ -57,7 +57,7 @@ export default function Fines() {
           </div>
           <div className="note plain">
             <b>Row source</b>
-            <p>Offences as listed by ZIMRA. Traffic offences are not covered yet.</p>
+            <p>Offences as listed by ZIMRA. For traffic offences, see <Link href="/traffic">Traffic deposit fines</Link>.</p>
           </div>
         </aside>
       </div>

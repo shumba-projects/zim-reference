@@ -17,7 +17,11 @@ export default function About() {
         <li><b><a href={SI19_URL}>SI 19 of 2023</a></b>Correction of Errors, gazetted 24 February 2023. Fines are in US$ but <em>may be</em> payable in local currency at the prevailing interbank rate.</li>
         <li><b><a href={ZIMRA_URL}>ZIMRA: Offences and standard scale of fines</a></b>Web page. Source of the customs offence rows.</li>
       </ul>
-      <p>Traffic offences are not included until the current ZRP Schedule of Deposit Fines is obtained from ZRP.</p>
+
+      <h2>Traffic deposit fines</h2>
+      <ul className="refs">
+        <li><b>ZRP National Schedule of Deposit Fines (unofficial copy)</b>A copy with no issue date or ZRP letterhead. All 405 rows were checked: every amount matches the level&apos;s maximum in SI 14A of 2023. Replace it once the current schedule is obtained from ZRP directly.</li>
+      </ul>
 
       <h2>Pay Check</h2>
       <ul className="refs">
@@ -28,7 +32,7 @@ export default function About() {
       <p>ZiG amounts use the Reserve Bank of Zimbabwe official interbank rate (via AllRatesToday), not the market rate. The two can differ by several percent. The rate date is shown next to every converted amount.</p>
       <p>Consult a lawyer, ZIMRA or your National Employment Council about your own situation.</p>
 
-      <Colophon>SI 14A of 2023, SI 19 of 2023, SI 186 of 2024 and ZIMRA</Colophon>
+      <Colophon>SI 14A of 2023, SI 19 of 2023, SI 186 of 2024, ZIMRA and a ZRP schedule copy</Colophon>
     </>
   )
 }

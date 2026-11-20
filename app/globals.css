@@ -70,6 +70,7 @@ main { max-width: 68rem; margin: 0 auto; padding: var(--s6) var(--s4) var(--s8);
 @media (min-width: 60rem) {
   .entry { grid-template-columns: minmax(0, 1fr) 17rem; gap: var(--s6); align-items: start; }
 }
+.entry > * { min-width: 0; }
 .notes { display: grid; gap: var(--s3); font-size: .9375rem; }
 .note { background: var(--note-tint); border: 1px solid var(--note-rule); color: var(--ink); padding: var(--s3) var(--s4); border-radius: 3px; }
 .note b { display: block; color: var(--note); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: var(--s1); }
@@ -99,13 +100,15 @@ input::placeholder { color: var(--ink-2); }
 .schedule td { padding: var(--s3); border-bottom: 1px solid var(--rule); vertical-align: top; }
 .schedule tr:last-child td { border-bottom: 0; }
 .schedule .num { text-align: right; white-space: nowrap; }
-.schedule .sec { font-weight: 700; white-space: nowrap; width: 4.5rem; }
+.schedule .sec { font-weight: 700; width: 7.5rem; overflow-wrap: anywhere; }
 .schedule tbody tr { transition: background-color .15s ease-out; }
 .schedule tbody tr:hover { background: var(--accent-tint); }
 .schedule td a { color: var(--ink); text-decoration-color: var(--rule); }
 .schedule td a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .amt { font-weight: 700; font-size: 1.0625rem; display: block; }
 .zig { font-size: .8125rem; color: var(--ink-2); display: block; }
+.schedule tr.group th { text-transform: none; letter-spacing: 0; font-size: .875rem; color: var(--ink); background: var(--ground); padding: var(--s4) var(--s3) var(--s2); border-bottom: 1px solid var(--rule-strong); white-space: normal; }
+.schedule tr.group:hover { background: none; }
 .empty td { padding: var(--s5) var(--s3); color: var(--ink-2); }
 
 /* Level gauge: 14 ticks */
@@ -183,10 +186,12 @@ select {
   .stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .stack tr { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s1) var(--s3); padding: var(--s3); border-bottom: 1px solid var(--rule); }
   .stack td { padding: 0; border: 0; }
-  .stack .sec { grid-row: 1 / span 2; width: auto; }
+  .stack .sec { grid-row: 1 / span 2; width: auto; max-width: 5.5rem; white-space: normal; overflow-wrap: anywhere; }
   .stack .desc { grid-column: 2 / 4; }
   .stack .lvlcell { grid-column: 2; }
   .stack .num { grid-column: 3; grid-row: 2; }
+  .stack tr.group { display: block; padding: 0; }
+  .stack tr.group th { display: block; }
   .ramp-cell { width: 40%; }
 }
 

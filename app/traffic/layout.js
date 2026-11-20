@@ -1,7 +1,7 @@
 import { SI14A_URL } from '../../data/sources'
 import { Colophon } from '../../lib/ui'
 
-export const metadata = { title: 'Traffic deposit fines' }
+export const metadata = { title: 'Traffic Deposit Fines' }
 
 export default function TrafficLayout({ children }) {
   return (

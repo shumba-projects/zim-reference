@@ -183,6 +183,8 @@ select {
 /* Colophon: the source line on every screen */
 .colophon { margin-top: var(--s6); padding-top: var(--s3); border-top: 1px solid var(--rule-strong); font-size: .875rem; color: var(--ink-2); }
 .colophon p { margin: 0; max-width: none; }
+.colophon p + p { margin-top: var(--s1); }
+h2[id] { scroll-margin-top: var(--s5); }
 
 .zig-col { font-size: .8125rem; color: var(--ink-2); }
 @media (min-width: 60rem) { .scale-note { margin-top: 2.6rem; } }

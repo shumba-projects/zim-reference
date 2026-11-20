@@ -35,7 +35,7 @@ export default function Traffic() {
   return (
     <>
       <div className="title-block">
-        <h1>Traffic deposit fines</h1>
+        <h1>Traffic Deposit Fines</h1>
         <p className="lede">The amount you can pay to admit guilt for a traffic offence instead of going to court.</p>
         <p className="flag"><b>Unofficial copy.</b> Amounts checked against SI 14A of 2023. See the notes.</p>
       </div>

@@ -25,7 +25,7 @@ export default function Offences() {
   return (
     <>
       <div className="title-block">
-        <h1>Court maximum fines</h1>
+        <h1>Court Maximum Fines</h1>
         <p className="lede">The most a court can fine you for an offence under the Criminal Law Code, the Environmental Management Act or the Road Traffic Act.</p>
       </div>
 

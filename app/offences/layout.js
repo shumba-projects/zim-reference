@@ -1,7 +1,7 @@
 import { SI14A_URL } from '../../data/sources'
 import { Colophon } from '../../lib/ui'
 
-export const metadata = { title: 'Court maximum fines' }
+export const metadata = { title: 'Court Maximum Fines' }
 
 export default function OffencesLayout({ children }) {
   return (

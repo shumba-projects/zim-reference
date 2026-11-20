@@ -52,7 +52,7 @@ export default function Fines() {
         </section>
 
         <Notes more={[
-          <div className="note plain" key="src"><b>Row source</b><p>Offences as listed by ZIMRA. For traffic offences, see <Link href="/traffic">Traffic deposit fines</Link>.</p></div>,
+          <div className="note plain" key="src"><b>Row source</b><p>Offences as listed by ZIMRA. For traffic offences, see <Link href="/traffic">Traffic Deposit Fines</Link>.</p></div>,
         ]}>
           <div className="note">
             <b>Maximum, not fixed</b>

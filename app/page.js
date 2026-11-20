@@ -17,13 +17,13 @@ export default function Home() {
         </li>
         <li>
           <Link href="/offences">
-            <b>Court maximum fines</b>
+            <b>Court Maximum Fines</b>
             <span>The most a court can fine for about 180 offences in the Criminal Law Code, the Environmental Management Act and the Road Traffic Act.</span>
           </Link>
         </li>
         <li>
           <Link href="/traffic">
-            <b>Traffic deposit fines</b>
+            <b>Traffic Deposit Fines</b>
             <span>The deposit fine for about 400 traffic offences, from licences to speeding.</span>
           </Link>
         </li>

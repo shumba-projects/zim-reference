@@ -10,6 +10,12 @@ export default function Home() {
       </div>
       <ul className="tools">
         <li>
+          <Link href="/traffic">
+            <b>Traffic Deposit Fines</b>
+            <span>The deposit fine for about 400 traffic offences, from licences to speeding.</span>
+          </Link>
+        </li>
+        <li>
           <Link href="/fines">
             <b>Fines and Penalties Lookup</b>
             <span>The 14 levels of the standard scale of fines, customs offences and the ZIMRA late-return penalty.</span>
@@ -19,12 +25,6 @@ export default function Home() {
           <Link href="/offences">
             <b>Court Maximum Fines</b>
             <span>The most a court can fine for about 180 offences in the Criminal Law Code, the Environmental Management Act and the Road Traffic Act.</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/traffic">
-            <b>Traffic Deposit Fines</b>
-            <span>The deposit fine for about 400 traffic offences, from licences to speeding.</span>
           </Link>
         </li>
       </ul>

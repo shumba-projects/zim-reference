@@ -1,0 +1,16 @@
+[
+  { "level": 1, "maxUsd": 5, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 2, "maxUsd": 15, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 3, "maxUsd": 30, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 4, "maxUsd": 100, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 5, "maxUsd": 200, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 6, "maxUsd": 300, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 7, "maxUsd": 400, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 8, "maxUsd": 500, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 9, "maxUsd": 600, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 10, "maxUsd": 700, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 11, "maxUsd": 1000, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 12, "maxUsd": 2000, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 13, "maxUsd": 3000, "source": "SI 14A of 2023", "retrieved": "2026-11-20" },
+  { "level": 14, "maxUsd": 5000, "source": "SI 14A of 2023", "retrieved": "2026-11-20" }
+]

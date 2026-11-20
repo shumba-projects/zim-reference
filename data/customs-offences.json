@@ -1,0 +1,11 @@
+[
+  { "section": "173", "description": "False statements by persons arriving in or departing from Zimbabwe", "level": 7, "amountUsd": 400, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "174", "description": "False invoices, false representation and forgery", "level": 12, "amountUsd": 2000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "181", "description": "Bribery and collusion", "level": 14, "amountUsd": 5000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "182", "description": "Smuggling", "level": 12, "amountUsd": 2000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "183", "description": "Importation of restricted goods", "level": 12, "amountUsd": 2000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "184", "description": "Miscellaneous offences", "level": 12, "amountUsd": 2000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "185", "description": "Warehousing irregularities", "level": 7, "amountUsd": 400, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "186", "description": "Penalties for failure to keep books, etc., in connection with manufacture of goods liable to excise duty or surtax", "level": 12, "amountUsd": 2000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" },
+  { "section": "188", "description": "Ships, vehicle, aircraft used for the conveyance of goods liable to forfeiture", "level": 14, "amountUsd": 5000, "source": "ZIMRA offences page", "retrieved": "2026-11-20" }
+]

@@ -1,0 +1,5 @@
+export const CHECKED = '2026-11-20'
+export const SI14A_URL = 'https://www.veritaszim.net/node/6162'
+export const SI19_URL = 'https://www.veritaszim.net/node/6169'
+export const ZIMRA_URL = 'https://www.zimra.co.zw/news/2179:offences-and-standard-scale-of-fines'
+export const SI186_URL = 'https://www.veritaszim.net/node/7275'

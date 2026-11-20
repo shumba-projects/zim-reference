@@ -1,4 +1,4 @@
-import { SI14A_URL, SI19_URL, ZIMRA_URL, SI186_URL } from '../../data/sources'
+import { SI14A_URL, SI19_URL, ZIMRA_URL } from '../../data/sources'
 import { Colophon } from '../../lib/ui'
 
 export const metadata = { title: 'About' }
@@ -23,16 +23,11 @@ export default function About() {
         <li><b>ZRP National Schedule of Deposit Fines (unofficial copy)</b>A copy with no issue date or ZRP letterhead. All 405 rows were checked: every amount matches the level&apos;s maximum in SI 14A of 2023. Replace it once the current schedule is obtained from ZRP directly.</li>
       </ul>
 
-      <h2>Pay Check</h2>
-      <ul className="refs">
-        <li><b><a href={SI186_URL}>SI 186 of 2024</a></b>Labour Relations (Specification of Minimum Wages) (Amendment) Notice, 2024 (No. 17). Gazetted 22 November 2024.</li>
-      </ul>
-
       <h2>Exchange rate</h2>
       <p>ZiG amounts use the Reserve Bank of Zimbabwe official interbank rate (via AllRatesToday), not the market rate. The two can differ by several percent. The rate date is shown next to every converted amount.</p>
-      <p>Consult a lawyer, ZIMRA or your National Employment Council about your own situation.</p>
+      <p>Consult a lawyer, ZIMRA or the ZRP about your own situation.</p>
 
-      <Colophon>SI 14A of 2023, SI 19 of 2023, SI 186 of 2024, ZIMRA and a ZRP schedule copy</Colophon>
+      <Colophon>SI 14A of 2023, SI 19 of 2023, ZIMRA and a ZRP schedule copy</Colophon>
     </>
   )
 }

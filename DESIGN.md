@@ -1,6 +1,6 @@
 ---
 name: Zimbabwe Reference
-description: The Schedule. Ruled statute tables with marginal notes, for gazetted fines and wages.
+description: The Schedule. Ruled statute tables with marginal notes, for gazetted fines and penalties.
 colors:
   ground: "#f6f7f9"
   sheet: "#ffffff"

@@ -2,10 +2,10 @@
 version: 1
 slug: "app-layout-js"
 primary_target: "app/layout.js"
-related_targets: ["app/fines/page.js","app/pay/page.js"]
+related_targets: ["app/fines/page.js","app/traffic/page.js"]
 ---
 
-# Surface: whole site (/, /fines, /fines/[section], /pay, /about)
+# Surface: whole site (/, /fines, /fines/[section], /traffic, /about)
 
 Mode: Operate (lookup), with Read on About. Audience: the Zimbabwean public on phones and desktops. Task: find a fine or wage figure and leave knowing its legal source. Constraints: static export, plain CSS, system fonts (slow data), light and dark.
 

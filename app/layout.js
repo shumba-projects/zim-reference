@@ -5,7 +5,7 @@ import './globals.css'
 
 export const metadata = {
   title: { default: 'Zimbabwe Reference', template: '%s · Zimbabwe Reference' },
-  description: 'Zimbabwe fines and minimum wages, copied from the gazetted statutory instruments.',
+  description: 'Zimbabwe fines and penalties, checked against the gazetted standard scale of fines.',
 }
 export const viewport = {
   themeColor: [

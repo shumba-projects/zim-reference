@@ -54,7 +54,7 @@
       "kind": "nav",
       "refersTo": "nav-link",
       "description": "Text tab; current page underlined in accent.",
-      "html": "<nav class=\"ds-nav\"><a aria-current=\"page\">Fines</a><a>Pay Check</a><a>About</a></nav>",
+      "html": "<nav class=\"ds-nav\"><a aria-current=\"page\">Fines</a><a>Traffic</a><a>About</a></nav>",
       "css": ".ds-nav{display:flex;gap:4px;font:16px system-ui,sans-serif}.ds-nav a{color:#4b5562;padding:8px 12px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}.ds-nav a[aria-current]{color:#14181d;border-bottom-color:#1d4ea0}"
     }
   ],

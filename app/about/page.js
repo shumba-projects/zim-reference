@@ -18,6 +18,19 @@ export default function About() {
         <li><b><a href={ZIMRA_URL}>ZIMRA: Offences and standard scale of fines</a></b>Web page. Source of the customs offence rows.</li>
       </ul>
 
+      <h2>ZIMRA tax penalties</h2>
+      <ul className="refs">
+        <li><b><a href="https://www.zimra.co.zw/public-notices?download=4204%3Apublic-notice-03-of-2025-vat-returns-and-payments-categories-b-and-c-due-date-25-january-2025">ZIMRA Public Notice 03 of 2025</a></b>Issued 15 January 2025. Source of the US$30-per-day penalty for late returns. The notice does not cite the section of the Act.</li>
+      </ul>
+
+      <h2>Court maximum fines</h2>
+      <ul className="refs">
+        <li><b><a href="https://veritaszim.net/sites/veritas_d/files/Crimcode%20%28updated%20to%202023.09%29.pdf">Criminal Law (Codification and Reform) Act [Chapter 9:23]</a></b>Veritas consolidated text, amended to Act 10/2023 and SI 14A/2023. 109 penalty clauses.</li>
+        <li><b><a href="https://ema.co.zw/wp-content/uploads/2026/03/EMA-ACT.pdf">Environmental Management Act [Chapter 20:27]</a></b>Text as published on the EMA website, amended to Act 6/2005. 17 penalty clauses. Later amendments, if any, are not included.</li>
+        <li><b>Road Traffic Act [Chapter 13:11]</b>A consolidated text amended to SI 124/2009, publisher unknown. 59 penalty clauses. Later amendments are not included.</li>
+      </ul>
+      <p>Each “fine not exceeding level N” clause was extracted automatically and converted with the gazetted scale. Section numbers and titles come from the same texts.</p>
+
       <h2>Traffic deposit fines</h2>
       <ul className="refs">
         <li><b>ZRP National Schedule of Deposit Fines (unofficial copy)</b>A copy with no issue date or ZRP letterhead. All 405 rows were checked: every amount matches the level&apos;s maximum in SI 14A of 2023. Replace it once the current schedule is obtained from ZRP directly.</li>

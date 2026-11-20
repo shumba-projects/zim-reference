@@ -12,7 +12,13 @@ export default function Home() {
         <li>
           <Link href="/fines">
             <b>Fines and Penalties Lookup</b>
-            <span>The 14 levels of the standard scale of fines, and the fine level for customs offences.</span>
+            <span>The 14 levels of the standard scale of fines, customs offences and the ZIMRA late-return penalty.</span>
+          </Link>
+        </li>
+        <li>
+          <Link href="/offences">
+            <b>Court maximum fines</b>
+            <span>The most a court can fine for about 180 offences in the Criminal Law Code, the Environmental Management Act and the Road Traffic Act.</span>
           </Link>
         </li>
         <li>
@@ -22,7 +28,7 @@ export default function Home() {
           </Link>
         </li>
       </ul>
-      <Colophon>SI 14A of 2023, ZIMRA and a ZRP schedule copy</Colophon>
+      <Colophon>SI 14A of 2023, ZIMRA, three consolidated Acts and a ZRP schedule copy</Colophon>
     </>
   )
 }

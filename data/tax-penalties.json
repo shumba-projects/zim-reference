@@ -1,0 +1,14 @@
+[
+ {
+  "id": "late-return",
+  "title": "Late submission of a tax return",
+  "amountUsd": 30,
+  "per": "day",
+  "effectiveFrom": "2025-01-01",
+  "wording": "with effect from 1 January 2025 ... the penalty for late submission of returns was reviewed to US$30 per day.",
+  "source": "ZIMRA Public Notice 03 of 2025 (issued 15/01/2025)",
+  "url": "https://www.zimra.co.zw/public-notices?download=4204%3Apublic-notice-03-of-2025-vat-returns-and-payments-categories-b-and-c-due-date-25-january-2025",
+  "caveat": "The notice does not cite the section of the Act or state a maximum number of days. Late payment also attracts separate penalties and interest.",
+  "retrieved": "2026-11-20"
+ }
+]

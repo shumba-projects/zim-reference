@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import levels from '../../data/fine-levels.json'
 import offences from '../../data/customs-offences.json'
+import tax from '../../data/tax-penalties.json'
 import { Zig, RateDate } from '../../lib/zig'
 import { usd, ramp, LevelGauge, SearchIcon, Notes } from '../../lib/ui'
 import { SI19_URL } from '../../data/sources'
@@ -16,7 +17,7 @@ export default function Fines() {
     <>
       <div className="title-block">
         <h1>Fines and Penalties Lookup</h1>
-        <p className="lede">Each fine level sets the most a court can impose. Find a customs offence, or go to <a href="#scale">the scale of all 14 levels</a>.</p>
+        <p className="lede">Each fine level sets the most a court can impose. Jump to <a href="#tax">tax penalties</a>, <a href="#scale">the 14-level scale</a> or <Link href="/offences">other offences</Link>.</p>
       </div>
 
       <div className="entry">
@@ -57,6 +58,29 @@ export default function Fines() {
             <b>Maximum, not fixed</b>
             <p>A court can set a lower fine within a level, never a higher one.</p>
           </div>
+        </Notes>
+      </div>
+
+      <div className="entry">
+        <section aria-labelledby="tax">
+          <h2 id="tax">ZIMRA tax penalties</h2>
+          <table className="schedule stack">
+            <thead>
+              <tr><th scope="col">Rule</th><th scope="col">From</th><th scope="col" className="num">Penalty</th></tr>
+            </thead>
+            <tbody>
+              {tax.map(t => (
+                <tr key={t.id}>
+                  <td className="desc">{t.title}<span className="zig">“{t.wording}” <a href={t.url}>{t.source}</a></span></td>
+                  <td className="lvlcell" style={{ whiteSpace: 'nowrap' }}>{new Date(t.effectiveFrom).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
+                  <td className="num"><span className="amt">{usd(t.amountUsd)} per {t.per}</span><span className="zig"><Zig usd={t.amountUsd} short /></span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+        <Notes label="Notes on tax penalties">
+          <div className="note scale-note"><b>Not a court fine</b><p>{tax[0].caveat}</p></div>
         </Notes>
       </div>
 

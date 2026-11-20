@@ -16,7 +16,7 @@ Look up a Zimbabwean fine level or deposit fine and see the exact figure from th
 Every number traces to a gazetted statutory instrument (copies are kept in `sources/`) or a named official page, never to news reports. The app records corrections (SI 19 of 2023) and caveats (exemptions, unstated currency, reported revisions) rather than smoothing them over.
 
 ## Operating Context
-Fines and penalties reference: Fines and Penalties Lookup (`/fines`, `/fines/[section]`) and Traffic deposit fines (`/traffic`), plus `/about`. Hosted as a static export on GitHub Pages. The ZiG rate is fetched once a day by a GitHub Action from AllRatesToday (RBZ official rate) and shipped as `zig-rate.json`.
+Fines and penalties reference: Fines and Penalties Lookup (`/fines`, `/fines/[section]`, incl. the ZIMRA late-return penalty), Court maximum fines from three Acts (`/offences`) and Traffic deposit fines (`/traffic`), plus `/about`. Hosted as a static export on GitHub Pages. The ZiG rate is fetched once a day by a GitHub Action from AllRatesToday (RBZ official rate) and shipped as `zig-rate.json`.
 
 ## Capabilities and Constraints
 - Static export only (Next.js `output: 'export'`, base path `/zim-reference`). No server at runtime.

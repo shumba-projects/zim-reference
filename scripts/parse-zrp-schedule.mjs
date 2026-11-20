@@ -8,7 +8,8 @@ if (!file || !/^\d{4}-\d\d-\d\d$/.test(retrieved ?? '')) throw new Error('usage:
 
 const SCALE = { 1: 5, 2: 15, 3: 30, 4: 100, 5: 200, 6: 300, 7: 400, 8: 500, 9: 600, 10: 700, 11: 1000, 12: 2000, 13: 3000, 14: 5000 }
 const lines = readFileSync(file, 'utf8').replace(/\r/g, '').split('\n')
-  .map(l => l.replace(/ /g, ' ').replace(/\s+/g, ' ').trim())
+  // The PDF's text layer has an unmapped glyph (U+FFFD) where the schedule prints a dash.
+  .map(l => l.replace(/ /g, ' ').replace(/([A-Z]) ?� ?([A-Z]{2})/g, '$1-$2').replace(/\s*�\s*/g, ' – ').replace(/\s+/g, ' ').trim())
   .filter(l => l && !/@|^\d+$|^NATIONAL SCHEDULE|^SECTION OFFENCE|^\(US\$\)$/.test(l))
 
 // Row end: "<text> .... <level> <amount>"; a few rows have no dot leader.

@@ -31,5 +31,8 @@ for (const a of acts) {
   assert.match(a.penalty, new RegExp(`level (${a.level}|${word})\\b`, 'i'), `act row s.${a.section}: penalty text must name level ${a.level}`)
 }
 for (const t of tax) assert.ok(t.amountUsd > 0 && t.source && t.url && t.retrieved, `tax rule ${t.id}`)
+for (const [name, data] of Object.entries({ levels, offences, traffic, acts, tax })) {
+  assert.ok(!/�|Ã.|â€/.test(JSON.stringify(data)), `${name}: contains a broken character`)
+}
 console.log(`ok: ${acts.length} act clauses, ${tax.length} tax rule,`)
 console.log(`ok: ${levels.length} levels, ${offences.length} customs, ${traffic.length} traffic rows`)

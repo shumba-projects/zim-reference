@@ -51,7 +51,7 @@ small, .muted { color: var(--ink-2); }
 
 /* Masthead */
 .top { border-bottom: 1px solid var(--rule-strong); background: var(--sheet); }
-.top-inner { max-width: 68rem; margin: 0 auto; padding: var(--s1) var(--s4); display: flex; align-items: center; gap: var(--s3); }
+.top-inner { padding: var(--s1) clamp(var(--s4), 3vw, var(--s7)); display: flex; align-items: center; gap: var(--s3); }
 .brand { display: inline-flex; align-items: center; gap: var(--s2); color: var(--ink); text-decoration: none; font-weight: 750; letter-spacing: -.01em; margin-right: auto; }
 .mark { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: square; }
 .mark-ink { stroke: var(--accent); stroke-width: 2.5; }

@@ -24,7 +24,7 @@ colors:
 typography:
   h1:
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "2rem"
+    fontSize: "1.75rem"
     fontWeight: 750
     lineHeight: 1.15
     letterSpacing: "-0.01em"
@@ -46,15 +46,20 @@ typography:
     letterSpacing: "-0.03em"
   ident:
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "3rem"
+    fontSize: "2.5rem"
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "-0.03em"
   h1-narrow:
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.75rem"
+    fontSize: "1.5rem"
     fontWeight: 750
     lineHeight: 1.15
+  figure-narrow:
+    fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "2rem"
+    fontWeight: 800
+    lineHeight: 1.05
   tool-title:
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.375rem"
@@ -150,9 +155,9 @@ Restrained: cool neutrals, one ink-blue accent, and amber reserved for caveats.
 One family, the system sans, so nothing extra loads on slow mobile data. Figures always use `tabular-nums lining-nums`.
 
 ### Hierarchy
-- **ident** (3rem/800): the section identifier, e.g. "s. 182", as the headline on detail pages.
-- **figure** (2.5rem/800): the amount the reader came for.
-- **h1** 2rem (1.75rem below 40rem), **tool-title** 1.375rem on the home list, **h2** 1.25rem.
+- **ident** (2.5rem/800, 2rem below 40rem): the section identifier, e.g. "s. 182", as the headline on detail pages.
+- **figure** (2.5rem/800, 2rem below 40rem): the amount the reader came for.
+- **h1** 1.75rem (1.5rem below 40rem), **tool-title** 1.375rem on the home list, **h2** 1.25rem.
 - **lede** 1.0625rem, **body** 1rem/1.55 with a 68ch measure, **note** 0.9375rem, **small** 0.875rem (captions, colophon, group heads), **zig** 0.8125rem (the ZiG line under an amount).
 - **column-head** (0.75rem, uppercase, 0.06em tracking): table column heads, `dt` labels and note titles only.
 
@@ -193,6 +198,10 @@ Text links at least 44px tall. The current page has a 2px accent underline.
 
 ### Colophon
 A ruled footer on every screen: "Source: <SI>. Last checked: <date>. Information only, not legal advice."
+
+## Density
+
+The answer should be visible without scrolling. Keep the title block to a heading, one lede line and at most one `flag` line (a single-line caveat, e.g. "Unofficial copy"). Long schedules show 30 rows with a "Show more" button. Notes put key caveats first; secondary notes fold into "N more notes". On phones the brand shows only its mark, so the header fits on one row.
 
 ## Do's and Don'ts
 

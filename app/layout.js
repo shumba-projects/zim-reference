@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body>
         <header className="top">
           <div className="top-inner">
-            <Link href="/" className="brand"><Mark />Zimbabwe Reference</Link>
+            <Link href="/" className="brand"><Mark /><span className="brand-name">Zimbabwe Reference</span></Link>
             <Nav />
           </div>
         </header>

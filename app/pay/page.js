@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import wages from '../../data/minimum-wages.json'
 import { Zig } from '../../lib/zig'
+import { Notes } from '../../lib/ui'
 
 const sectors = [...new Set(wages.map(w => w.sector))]
 
@@ -15,7 +16,8 @@ export default function Pay() {
     <>
       <div className="title-block">
         <h1>Pay Check</h1>
-        <p className="lede">Choose your kind of work to see the legal minimum wage, when it took effect and who it covers.</p>
+        <p className="lede">The legal minimum wage for your kind of work, when it took effect and who it covers.</p>
+        {w.status && <p className="flag"><b>May be out of date.</b> {w.status.replace(/, so this figure may be out of date\.$/, '.')}</p>}
       </div>
 
       <div className="fields">
@@ -24,11 +26,13 @@ export default function Pay() {
             {sectors.map(s => <option key={s}>{s}</option>)}
           </select>
         </label>
-        <label>Grade
-          <select value={grade} onChange={e => setGrade(e.target.value)}>
-            {grades.map(g => <option key={g.grade}>{g.grade}</option>)}
-          </select>
-        </label>
+        {grades.length > 1 && (
+          <label>Grade
+            <select value={grade} onChange={e => setGrade(e.target.value)}>
+              {grades.map(g => <option key={g.grade}>{g.grade}</option>)}
+            </select>
+          </label>
+        )}
       </div>
 
       <div className="entry">
@@ -59,15 +63,15 @@ export default function Pay() {
           </dl>
         </section>
 
-        <aside className="notes" aria-label="Notes">
-          {w.status && <div className="note"><b>May be out of date</b><p>{w.status}</p></div>}
+        <Notes more={[
+          <div className="note" key="pay"><b>Payment rule</b><p>{w.payableNote}</p></div>,
+        ]}>
           {w.excludes && <div className="note"><b>Not covered</b><p>{w.excludes}</p></div>}
-          <div className="note"><b>Payment rule</b><p>{w.payableNote}</p></div>
           <div className="note plain">
             <b>Check your sector</b>
             <p>Most workers are covered by their sector&apos;s National Employment Council agreement, not by this general rate. Check with your NEC.</p>
           </div>
-        </aside>
+        </Notes>
       </div>
     </>
   )

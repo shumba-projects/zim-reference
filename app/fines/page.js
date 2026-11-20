@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import levels from '../../data/fine-levels.json'
 import offences from '../../data/customs-offences.json'
-import { Zig, usd } from '../../lib/zig'
+import { Zig, RateDate } from '../../lib/zig'
+import { usd, ramp, LevelGauge, SearchIcon } from '../../lib/ui'
+import { SI19_URL } from '../../data/sources'
 
 export default function Fines() {
   const [q, setQ] = useState('')
@@ -12,38 +14,84 @@ export default function Fines() {
 
   return (
     <>
-      <h1>Fines and Penalties Lookup</h1>
-      <label>
-        Search customs offences (section or words)
-        <br />
-        <input type="search" value={q} onChange={e => setQ(e.target.value)} placeholder="e.g. smuggling or 182" />
-      </label>
-      <table>
-        <thead><tr><th>Section</th><th>Offence</th><th>Level</th><th>Max fine</th></tr></thead>
-        <tbody>
-          {hits.map(o => (
-            <tr key={o.section}>
-              <td>{o.section}</td>
-              <td><Link href={`/fines/${o.section}`}>{o.description}</Link></td>
-              <td>{o.level}</td>
-              <td>{usd(o.amountUsd)}<br /><Zig usd={o.amountUsd} /></td>
-            </tr>
-          ))}
-          {!hits.length && <tr><td colSpan={4}>No customs offence matches “{q}”.</td></tr>}
-        </tbody>
-      </table>
-      <p className="muted">Customs and Excise Act offences as listed by ZIMRA. Traffic offences are not covered.</p>
+      <div className="title-block">
+        <h1>Fines and Penalties Lookup</h1>
+        <p className="lede">Find a customs offence to see its fine level and the most a court can impose.</p>
+      </div>
 
-      <h2>Standard scale of fines</h2>
-      <p>Each level is a maximum. A court may impose less, but never more.</p>
-      <table>
-        <thead><tr><th>Level</th><th>Maximum</th><th>ZiG equivalent</th></tr></thead>
-        <tbody>
-          {levels.map(l => (
-            <tr key={l.level}><td>{l.level}</td><td>{usd(l.maxUsd)}</td><td><Zig usd={l.maxUsd} /></td></tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="entry">
+        <section aria-labelledby="customs">
+          <h2 id="customs" style={{ marginTop: 0 }}>Customs and Excise Act offences</h2>
+          <div className="search">
+            <label htmlFor="q">Search by section number or words</label>
+            <SearchIcon />
+            <input id="q" type="search" value={q} onChange={e => setQ(e.target.value)} placeholder="e.g. smuggling, or 182" autoComplete="off" />
+          </div>
+          <p className="count" aria-live="polite">
+            {hits.length === offences.length ? `${hits.length} offences` : `${hits.length} of ${offences.length} offences`}
+          </p>
+          <table className="schedule stack">
+            <thead>
+              <tr><th scope="col">Section</th><th scope="col">Offence</th><th scope="col">Level</th><th scope="col" className="num">Maximum fine</th></tr>
+            </thead>
+            <tbody>
+              {hits.map(o => (
+                <tr key={o.section}>
+                  <td className="sec">s.&nbsp;{o.section}</td>
+                  <td className="desc"><Link href={`/fines/${o.section}`}>{o.description}</Link></td>
+                  <td className="lvlcell"><a className="lvl" href={`#level-${o.level}`} aria-label={`Level ${o.level}: see it on the scale`}><b>{o.level}</b><LevelGauge level={o.level} /></a></td>
+                  <td className="num"><span className="amt">{usd(o.amountUsd)}</span><span className="zig"><Zig usd={o.amountUsd} short /></span></td>
+                </tr>
+              ))}
+              {!hits.length && (
+                <tr className="empty"><td colSpan={4}>No customs offence matches “{q}”. Try a section number such as 182, or a single word such as “invoice”.</td></tr>
+              )}
+            </tbody>
+          </table>
+        </section>
+
+        <aside className="notes" aria-label="Notes">
+          <div className="note">
+            <b>Maximum, not fixed</b>
+            <p>Each level is the most a court may impose. It can set a lower fine, never a higher one.</p>
+          </div>
+          <div className="note plain">
+            <b>Row source</b>
+            <p>Offences as listed by ZIMRA. Traffic offences are not covered yet.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div className="entry">
+        <section aria-labelledby="scale">
+          <h2 id="scale">Standard scale of fines</h2>
+          <table className="schedule">
+            <caption><RateDate /></caption>
+            <thead>
+              <tr><th scope="col">Level</th><th scope="col" className="ramp-cell"><span className="visually-hidden">Relative size</span></th><th scope="col" className="num">Maximum</th></tr>
+            </thead>
+            <tbody>
+              {levels.map(l => (
+                <tr key={l.level} id={`level-${l.level}`}>
+                  <td className="sec">{l.level}</td>
+                  <td className="ramp-cell"><div className="ramp" style={{ '--w': ramp(l.maxUsd) }} /></td>
+                  <td className="num"><span className="amt">{usd(l.maxUsd)}</span><span className="zig"><Zig usd={l.maxUsd} short /></span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+        <aside className="notes" aria-label="Notes on the scale" style={{ marginTop: 'var(--s7)' }}>
+          <div className="note">
+            <b>Corrected 24 Feb 2023</b>
+            <p>Fines are set in US dollars but <em>may be</em> paid in local currency at the interbank rate (<a href={SI19_URL}>SI 19 of 2023</a>).</p>
+          </div>
+          <div className="note plain">
+            <b>Bar length</b>
+            <p>Drawn on a log scale so that US$5 and US$5,000 fit on one line.</p>
+          </div>
+        </aside>
+      </div>
     </>
   )
 }

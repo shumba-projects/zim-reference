@@ -1,15 +1,28 @@
 import Link from 'next/link'
-import { CHECKED } from '../data/sources'
+import { Colophon } from '../lib/ui'
 
 export default function Home() {
   return (
     <>
-      <h1>Zimbabwe Reference</h1>
-      <ul>
-        <li><Link href="/fines">Fines and Penalties Lookup</Link>: standard scale of fines and customs offences</li>
-        <li><Link href="/pay">Pay Check</Link>: statutory minimum wage</li>
+      <div className="title-block">
+        <h1>Zimbabwe fines and minimum wages, from the gazette</h1>
+        <p className="lede">Every figure is copied from the gazetted statutory instrument, with its number and date. An independent reference, not a government service.</p>
+      </div>
+      <ul className="tools">
+        <li>
+          <Link href="/fines">
+            <b>Fines and Penalties Lookup</b>
+            <span>The 14 levels of the standard scale of fines, and the fine level for customs offences.</span>
+          </Link>
+        </li>
+        <li>
+          <Link href="/pay">
+            <b>Pay Check</b>
+            <span>The statutory minimum wage, its effective date and who it covers.</span>
+          </Link>
+        </li>
       </ul>
-      <p className="source">Sources: SI 14A of 2023, SI 186 of 2024 and ZIMRA. Last checked: {CHECKED}. Information only, not legal advice.</p>
+      <Colophon>SI 14A of 2023, SI 186 of 2024 and ZIMRA</Colophon>
     </>
   )
 }

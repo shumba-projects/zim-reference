@@ -1,12 +1,13 @@
-import { CHECKED, SI186_URL } from '../../data/sources'
+import { SI186_URL } from '../../data/sources'
+import { Colophon } from '../../lib/ui'
+
+export const metadata = { title: 'Pay Check' }
 
 export default function PayLayout({ children }) {
   return (
     <>
       {children}
-      <p className="source">
-        Source: <a href={SI186_URL}>SI 186 of 2024</a>. Last checked: {CHECKED}. Information only, not legal advice.
-      </p>
+      <Colophon><a href={SI186_URL}>SI 186 of 2024</a></Colophon>
     </>
   )
 }

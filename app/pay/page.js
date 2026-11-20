@@ -13,33 +13,62 @@ export default function Pay() {
 
   return (
     <>
-      <h1>Pay Check</h1>
-      <p className="warn">
-        Most workers are covered by their sector&apos;s National Employment Council agreement, not by this general rate.
-        Check with your NEC.
-      </p>
-      <label>Kind of work<br />
-        <select value={sector} onChange={e => { setSector(e.target.value); setGrade(wages.find(x => x.sector === e.target.value).grade) }}>
-          {sectors.map(s => <option key={s}>{s}</option>)}
-        </select>
-      </label>
-      <br />
-      <label>Grade<br />
-        <select value={grade} onChange={e => setGrade(e.target.value)}>
-          {grades.map(g => <option key={g.grade}>{g.grade}</option>)}
-        </select>
-      </label>
+      <div className="title-block">
+        <h1>Pay Check</h1>
+        <p className="lede">Choose your kind of work to see the legal minimum wage, when it took effect and who it covers.</p>
+      </div>
 
-      <h2>Legal minimum: {w.minimum.toFixed(2)} per {w.period}</h2>
-      {w.status && <p className="warn">{w.status}</p>}
-      <dl>
-        <dt>Currency</dt><dd>{w.currency}</dd>
-        <dt>Payment rule</dt><dd>{w.payableNote}</dd>
-        {w.zigAllowed && <><dt>ZiG equivalent</dt><dd><Zig usd={w.minimum} /></dd></>}
-        <dt>Effective from</dt><dd>{w.effectiveFrom}{w.effectiveNote && <> <span className="muted">({w.effectiveNote})</span></>}</dd>
-        <dt>Instrument</dt><dd><a href={w.url}>{w.si}</a>, retrieved {w.retrieved}</dd>
-        {w.excludes && <><dt>Not covered</dt><dd>{w.excludes}</dd></>}
-      </dl>
+      <div className="fields">
+        <label>Kind of work
+          <select value={sector} onChange={e => { setSector(e.target.value); setGrade(wages.find(x => x.sector === e.target.value).grade) }}>
+            {sectors.map(s => <option key={s}>{s}</option>)}
+          </select>
+        </label>
+        <label>Grade
+          <select value={grade} onChange={e => setGrade(e.target.value)}>
+            {grades.map(g => <option key={g.grade}>{g.grade}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <div className="entry">
+        <section className="figure" aria-live="polite" aria-label="Legal minimum">
+          <dl>
+            <div>
+              <dt>Legal minimum</dt>
+              <dd className="big">{w.minimum.toFixed(2)} <small>per {w.period}</small></dd>
+            </div>
+            <div>
+              <dt>Currency</dt>
+              <dd>{w.currency}</dd>
+            </div>
+            {w.zigAllowed && (
+              <div>
+                <dt>ZiG equivalent</dt>
+                <dd><Zig usd={w.minimum} /></dd>
+              </div>
+            )}
+            <div>
+              <dt>Effective from</dt>
+              <dd>{w.effectiveFrom}{w.effectiveNote && <><br /><small>{w.effectiveNote}</small></>}</dd>
+            </div>
+            <div>
+              <dt>Instrument</dt>
+              <dd><a href={w.url}>{w.si}</a>, retrieved {w.retrieved}</dd>
+            </div>
+          </dl>
+        </section>
+
+        <aside className="notes" aria-label="Notes">
+          {w.status && <div className="note"><b>May be out of date</b><p>{w.status}</p></div>}
+          {w.excludes && <div className="note"><b>Not covered</b><p>{w.excludes}</p></div>}
+          <div className="note"><b>Payment rule</b><p>{w.payableNote}</p></div>
+          <div className="note plain">
+            <b>Check your sector</b>
+            <p>Most workers are covered by their sector&apos;s National Employment Council agreement, not by this general rate. Check with your NEC.</p>
+          </div>
+        </aside>
+      </div>
     </>
   )
 }

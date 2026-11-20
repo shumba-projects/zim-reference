@@ -4,4 +4,6 @@ out
 public/zig-rate.json
 .env*
 !.env.example
-.impeccable
+.impeccable/*
+!.impeccable/design.json
+!.impeccable/surfaces/
